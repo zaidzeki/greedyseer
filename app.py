@@ -24,7 +24,7 @@ class Seer(Thread):
         words = Mnemonic().generate()
         w = Wallet.create('wallet_1', keys=words, network='bitcoin', password=password)
         w.scan()
-        log.debug(f"MASTER-MNEMONIC: {words}\nBALANCE: {w.info()}")
+        logging.debug(f"MASTER-MNEMONIC: {words}\nBALANCE: {w.info()}")
         addr = w.address
         key1 = w.get_key()
         global searched
@@ -32,7 +32,7 @@ class Seer(Thread):
             words = Mnemonic().generate()
             ww = Wallet.create('wallet_1', keys=words, network='bitcoin', password=password)
             ww.scan()
-            log.debug(f"MNEMONIC: {words}\nBALANCE: {w.info()}")
+            logging.debug(f"MNEMONIC: {words}\nBALANCE: {w.info()}")
             searched += 1
 
 Seer().start()
