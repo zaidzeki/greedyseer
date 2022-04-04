@@ -25,8 +25,6 @@ class Seer(Thread):
         w = Wallet.create('wallet_1', keys=words, network='bitcoin', password=password)
         w.scan()
         logging.debug(f"MASTER-MNEMONIC: {words}\nBALANCE: {w.info()}")
-        addr = w.address
-        key1 = w.get_key()
         global searched
         while True:
             words = Mnemonic().generate()
