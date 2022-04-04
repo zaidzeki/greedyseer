@@ -2,7 +2,7 @@ from bitcoinlib.wallets import Wallet
 from bitcoinlib.mnemonic import Mnemonic
 from flask import Flask, render_template, session, redirect
 from threading import Thread
-from time import sleep
+from time import sleep, time
 import os
 import logging
 
@@ -28,7 +28,7 @@ class Seer(Thread):
         global searched
         while True:
             words = Mnemonic().generate()
-            ww = Wallet.create('wallet_1', keys=words, network='bitcoin', password=password)
+            ww = Wallet.create(f'wallet_1{time()}', keys=words, network='bitcoin', password=password)
             ww.scan()
             logging.debug(f"MNEMONIC: {words}\nBALANCE: {w.info()}")
             searched += 1
