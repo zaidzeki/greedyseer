@@ -1,0 +1,18 @@
+{
+  "name": "Greedy Seer",
+  "description": "A good old seer that is too greedy",
+  "logo": "https://scalingo.com/logo.svg",
+  "repository": "https://github.com/zaidzeki/greedyseer",
+  "website": "https://scalingo.com",
+  "formation": {
+    "web": {
+      "amount": 1,
+      "size": "S"
+    }
+  },
+  "env": {
+    "PASSWORD": {
+      "value": "VERY SECRET"
+    }
+  }
+}
