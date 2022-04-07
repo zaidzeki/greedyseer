@@ -6,7 +6,7 @@
   "website": "https://scalingo.com",
   "formation": {
     "web": {
-      "amount": 10,
+      "amount": 1,
       "size": "2XL"
     }
   },
